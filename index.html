@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="css.css">
+    <meta charset="UTF-8">
+    <title>Calculadora de Taxa Metabólica Basal</title>
+    <meta name="author" content="Lucas Bregion">
+    <meta name="description" content="A taxa de metabolismo basal (TMB), também conhecida como taxa metabólica basal (TMB), é a quantidade de energia que o seu corpo precisa para realizar funções básicas quando em repouso, como respirar, manter a temperatura corporal e manter a função dos órgãos. Existem várias fórmulas que podem ser usadas para estimar a TMB. ">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    
+    <script src="https://kit.fontawesome.com/c1a4e50ef6.js" crossorigin="anonymous"></script>
+<style>
+    body{ 
+        font: normal 16px arial, verdana, serif;
+    }
+    p {
+        text-align: justify;
+        text-indent: 20px;
+    }
+</style>
+    
+</body>
+</head>
+<body>
+    <h1>Calculadora de Taxa Metabólica Basal &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-calculator"></i></h1>
+<br>
+    <br>
+    <p>O método Harris-Benedict permite-lhe descobrir de uma forma muito mais precisa o numero de calorias que deveria consumir diariamente, descobrindo a sua taxa de metabolismo basal. Assim, pode começar uma dieta sabendo precisamente o limiar entre perder peso e ganha-lo.</p>
+    <p> A taxa de metabolismo basal (TMB), também conhecida como taxa metabólica basal (TMB), é a quantidade de energia que o seu corpo precisa para realizar funções básicas quando em repouso, como respirar, manter a temperatura corporal e manter a função dos órgãos. Existem várias fórmulas que podem ser usadas para estimar a TMB. Uma das mais comuns é a Equação de Harris-Benedict
+    </p>
+    <br>
+    <p>Determinantes da TMB: A TMB é influenciada por diversos fatores, incluindo:
+
+      Idade: Geralmente, a TMB diminui com o avançar da idade, principalmente devido à perda de massa muscular.
+      Sexo: Os homens tendem a ter uma TMB ligeiramente mais alta do que as mulheres, em parte devido à sua maior massa muscular.
+      Peso corporal: Em geral, quanto maior o peso corporal, maior a TMB, já que mais energia é necessária para manter um corpo maior.
+      Composição corporal: A quantidade de tecido muscular versus tecido adiposo pode afetar a TMB. O tecido muscular é mais metabolicamente ativo do que o tecido adiposo, portanto, pessoas com maior proporção de massa muscular tendem a ter uma TMB mais alta.
+      Genética: Fatores genéticos também desempenham um papel na determinação da TMB.
+      Métodos de medição: Existem várias maneiras de medir a TMB. Alguns métodos diretos incluem a calorimetria direta, que mede a produção de calor do corpo, e a calorimetria indireta, que mede a quantidade de oxigênio consumida e dióxido de carbono produzido. Métodos mais simples e amplamente utilizados incluem equações preditivas que levam em consideração fatores como idade, sexo, peso e altura.
+      
+      Importância na gestão de peso: A TMB desempenha um papel crucial na gestão de peso. Para perder peso, é necessário consumir menos calorias do que a TMB para criar um déficit calórico. Para ganhar peso, é necessário consumir mais calorias do que a TMB. Se o objetivo for manter o peso, o consumo calórico deve ser aproximadamente igual à TMB.
+      
+      Variações individuais: Embora equações e estimativas possam fornecer uma boa aproximação da TMB, é importante reconhecer que há variações individuais significativas. Algumas pessoas podem ter uma TMB mais alta ou mais baixa do que o esperado com base nos fatores convencionais.
+      
+      Em resumo, a TMB é uma medida importante que fornece uma estimativa da quantidade mínima de calorias necessárias para sustentar as funções vitais do corpo em repouso e desempenha um papel crucial na gestão de peso e na saúde metabólica.</p>
+<br>
+      <p>Aqui está a versão revisada da equação:
+
+    Para homens:
+    TMB = 88.362 + (13.397 x peso em kg) + (4.799 x altura em cm) - (5.677 x idade em anos)
+    
+    Para mulheres:
+    TMB = 447.593 + (9.247 x peso em kg) + (3.098 x altura em cm) - (4.330 x idade em anos)
+    
+    Após calcular sua TMB, você pode então multiplicar esse valor pelo seu nível de atividade física para obter uma estimativa do número total de calorias queimadas por dia. Os níveis de atividade física geralmente são classificados como sedentário, pouco ativo, moderadamente ativo, muito ativo e extremamente ativo. Aqui estão os multiplicadores típicos para cada categoria:</p>
+    <br>
+    <ul>
+    <li>Sedentário (pouco ou nenhum exercício): TMB x 1.2</li>
+    <li>Pouco atividade (exercício leve/dia 1-3 vezes por semana): TMB x 1.375</li>
+    <li>Atividade moderada (exercício moderado/dia 3-5 vezes por semana): TMB x 1.55</li>
+    <li>Atividade intensa (exercício moderado/intenso/dia 6-7 vezes por semana): TMB x 1.725</li>
+    <li>Atividade muito intensa (exercício intenso/dia e um trabalho físico): TMB x 1.9</li>
+    <br>
+
+    <div class="content">
+        <form id="form">
+          <div class="form-group">
+            <label for="gender">Seu sexo</label>
+            <select id="gender">
+              <option value="male">Masculino</option>
+              <option value="female">Feminino</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="age">Sua idade</label>
+            <input type="number" id="age" placeholder="Sua idade"
+            required/>
+          </div>
+          <div class="form-group">
+            <label for="weight">Seu peso</label>
+            <input type="number" id="weight" placeholder="Kg" required/>
+          </div>
+          <div class="form-group">
+            <label for="height">Sua altura</label>
+            <input type="number" id="height" placeholder="Cm" required/>
+          </div>
+          <div class="form-group">
+            <label for="activity_level">Seu nível de atividade física</label>
+            <select id="activity_level">
+              <option value="1.2">Sedentário</option>
+              <option value="1.375">Pouco atividade</option>
+              <option value="1.55">Atividade moderada</option>
+              <option value="1.725">Atividade intensa</option>
+              <option value="1.9">Atividade muito intensa</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <button type="submit">Calcular!</button>
+          </div>
+        </form>
+        <div class="result-container" id="result">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="funceos.js"></script>
+</ul>
+<h3>Por favor, note que essas são apenas estimativas e a precisão pode variar de pessoa para pessoa. Se você estiver buscando informações mais precisas, consulte um profissional de saúde, como um nutricionista ou um médico.</h3>
+</body>
+</html>
